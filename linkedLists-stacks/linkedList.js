@@ -1,11 +1,9 @@
+'use strict';
+const Node = require('./Node');
+
 function LinkedList() {
   this.head = null;
   this.tail = null;
-}
-
-function Node(data) {
-  this.data = data;
-  this.next = null;
 }
 
 LinkedList.prototype.push = function(val) {
@@ -92,6 +90,27 @@ LinkedList.prototype.insertAfter = function(elem, data) {
   return false;
 };
 
+LinkedList.prototype.mthToLast = function(m) {
+  if (m === null || m < 0) {
+    return false;
+  }
+  var mBehind;
+  var current = this.head;
+  var ctr = 0;
+
+  while (current) {
+    // Check the counter. If we are at m, then start advancing mBehind
+    if (ctr === m) {
+      mBehind = this.head;
+    }
+
+    if (current.next === null) {
+    }
+
+    ctr++;
+  }
+};
+
 var sll = new LinkedList();
 sll.push(1);
 sll.push(2);
@@ -100,4 +119,4 @@ sll.push(4);
 var elem3 = sll.find(3);
 sll.remove(elem3);
 
-
+module.exports = LinkedList;
